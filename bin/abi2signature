@@ -44,7 +44,7 @@ async function main() {
       input = input.replace(/:/g, `":"`);
       input = input.replace(/,/g, `","`);
       input = input.replace(/}/g, `"}`);
-      input = input.replace(/\"\[/g, "[");
+      input = input.replace(/\"\[/g, `[`);
       input = input.replace(/]"/g, `]`);
 
       contractABI = JSON.parse(input);
@@ -72,8 +72,6 @@ async function main() {
 
     default:
       contractABI = JSON.parse(await readStdin());
-      console.log(JSON.stringify(contractABI, null, 2))
-
 
       for (let i = 0; i < contractABI.length; i++) {
         abiFunction = contractABI[i];
