@@ -1,3 +1,13 @@
+# Fork Notes
+
+- return parameter types along with function name to match format used to generated function signature (`0x9d01174f -> receive(address)` instead of `0x9d01174f -> [ function ] receive`)
+- minor changes to how the results are formatted
+- improved argv-to-json parsing with no added dependencies
+- `./vscode` removed
+- added cryptokitties.json example
+
+---
+
 # abi2signature
 
 Generates the Ethereum ABI 4 byte signatures if you provide the ABI or the function signature.
@@ -34,7 +44,7 @@ receive(address) -> 0x9d01174f
 
 #### From ABI string
 ```console
-$ abi2signature string2sig '[{...your abi...}]' 
+$ abi2signature string2sig '[{...your abi...}]'
 ```
 
 #### Vyper one liner
